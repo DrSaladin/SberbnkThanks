@@ -4,13 +4,627 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FSD-project</title>
+  <title>Спасибо от Сбербанка</title>
   <link rel=stylesheet href=css/style.min.css>
-  <link rel="preload" href="fonts/montserratregular.woff2" as="font" type="font/woff2">
-
+  <link rel="preload" href="fonts/Geometria-Bold.woff" as="font" type="font/woff">
+  <link rel="preload" href="fonts/Geometria-Bold.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/Geometria-normal.woff" as="font" type="font/woff">
+  <link rel="preload" href="fonts/Geometria-Regular.woff2" as="font" type="font/woff2">
 </head>
 
 <body>
+  <header class="page-header">
+    <nav class="page-nav">
+      <div class="container page-nav__wrapper">
+        <a href="index.html" class="page-nav__logo-link">
+          <img src="img/logo_sberbank_thanks.png"
+          alt="Спасибо от сбербанка"
+          width="180"
+          height="80">
+        </a>
+      </div>
+
+      <button class="page-nav__hamburger page-nav__hamburger--mobile" type="button"></button>
+
+      <ul class="page-nav__main-nav main-nav">
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Купоны и сертификаты
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Впечатления
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Авиабилеты
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Ж/д билеты
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Отели
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Каршеринг
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Театры
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Страхование
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Как подключиться
+          </a>
+        </li>
+        <li class="main-nav__item">
+          <a class="main-nav__item-link" href="">
+            Партнеры
+          </a>
+        </li>
+      </ul>
+
+      <div class="page-nav__coord user-coord">
+        <a class="user-coord__link" href="">
+          <svg class="user-coord__svg" width="22" height="21">
+            <use xlink:href="#icon-location-triangle"></use>
+          </svg>
+          Санкт-Петербург
+        </a>
+        <p class="user-coord__popup-option visually-hidden">
+          <span class="user-coord__city-question">
+            Ваш город - Санкт-Петербург?
+          </span>
+          <button class="user-coord__city-confirm-button">
+            Да
+          </button>
+          <button class="user-coord__change-city-button">
+            Сменить город
+          </button>
+        </p>
+      </div>
+
+      <button>
+        <svg class="user-coord__search-button" width="21" height="21">
+          <use xlink:href="#icon-search"></use>
+        </svg>
+      </button>
+
+      <button class="user-coord__signin-button">
+        Войти
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="visually-hidden">
+        Выгодные предложения от Сбербанк Спасибо
+      </h1>
+
+      <h2 class="offers__title">
+        Партнеры и предложения
+      </h2>
+
+      <section class="partners">
+        <h2 class="visually-hidden">
+          Партнеры проекта Сбербанк Спасибо
+        </h2>
+        <form class="partners__form partners-form" action="">
+          <label class="partners-form__label" for="all-partners">Все партнеры</label>
+          <input class="partners-form__checkbox" type="checkbox" name="all-partners" id="all-partners">
+          <label class="partners-form__label" for="popular-partners">Популярные</label>
+          <input class="partners-form__checkbox" type="checkbox" name="popular-partners" id="popular-partners">
+          <label class="partners-form__label" for="supermarket-partners">Супермаркеты</label>
+          <input class="partners-form__checkbox" type="checkbox" name="supermarket-partners" id="supermarket-partners">
+          <label class="partners-form__label" for="cafe-partners">Кафе и рестораны</label>
+          <input class="partners-form__checkbox" type="checkbox" name="cafe-partners" id="cafe-partners">
+          <label class="partners-form__label" for="taxi-partners">Такси</label>
+          <input class="partners-form__checkbox" type="checkbox" name="taxi-partners" id="taxi-partners">
+          <label class="partners-form__label" for="beauty-partners">Красота</label>
+          <input class="partners-form__checkbox" type="checkbox" name="beauty-partners" id="beauty-partners">
+          <label class="partners-form__label" for="utilities-partners">Электроника и бытовая техника</label>
+          <input class="partners-form__checkbox" type="checkbox" name="utilities-partners" id="utilities-partners">
+          <label class="partners-form__label" for="zooshop-partners">Зоотовары</label>
+          <input class="partners-form__checkbox" type="checkbox" name="zooshop-partners" id="zooshop-partners">
+          <label class="partners-form__label" for="theatre-partners">Кино и театр</label>
+          <input class="partners-form__checkbox" type="checkbox" name="theatre-partners" id="theatre-partners">
+          <button class="partners-form__show-more-button" aria-label="показать все варианты">
+            ...
+          </button>
+
+          <div class="partners-form__options-toggle two-option-toggle">
+            <p class="two-option-toggle__first-option">
+
+            </p>
+            <label for="give-or-take">
+              <input type="radio" id="give-or-take">
+            </label>
+            <p class="two-option-toggle__second-option">
+
+            </p>
+          </div>
+        </form>
+
+        <ul class="partners-list">
+          <li class="partners-list__item">
+            <p class="partners-list__item-info">
+              <span class="partners-list__item-percent">
+                1,5%
+              </span>
+              <span class="partners-list__item-clarification">
+                Спасибо от суммы покупки
+              </span>
+            </p>
+            <img class="partners-list__item-img"
+            src="img/img_mvideo1x.png"
+            alt="Предложение МВидео на Сбербанк Спасибо"
+            width="120"
+            height="120">
+            <p class="partners-list__item-title">
+
+            </p>
+          </li>
+
+          <li class="partners-list__item">
+            <p class="partners-list__item-info">
+              <span class="partners-list__item-percent">
+                3%
+              </span>
+              <span class="partners-list__item-clarification">
+                Спасибо от суммы покупки
+              </span>
+            </p>
+            <img class="partners-list__item-img"
+            src="img/img_burger_king.png"
+            alt="Предложение Бургер Кинга на Сбербанк Спасибо"
+            width="120"
+            height="120">
+            <p class="partners-list__item-title">
+
+            </p>
+          </li>
+
+          <li class="partners-list__item">
+            <p class="partners-list__item-info">
+              <span class="partners-list__item-percent">
+                4,5%
+              </span>
+              <span class="partners-list__item-clarification">
+                Спасибо от суммы покупки
+              </span>
+            </p>
+            <img class="partners-list__item-img"
+            src="img/img_technopark1x.png"
+            alt="Предложение Технопарка на Сбербанк Спасибо"
+            width="120"
+            height="120">
+            <p class="partners-list__item-title">
+
+            </p>
+          </li>
+
+          <li class="partners-list__item">
+            <p class="partners-list__item-info">
+              <span class="partners-list__item-percent">
+                От 1,5%
+              </span>
+              <span class="partners-list__item-clarification">
+                Спасибо от суммы покупки
+              </span>
+            </p>
+            <img class="partners-list__item-img"
+            src="img/img_bork.png"
+            alt="Предложение Борк на Сбербанк Спасибо"
+            width="120"
+            height="120">
+            <p class="partners-list__item-title">
+
+            </p>
+          </li>
+
+          <li class="partners-list__item">
+            <p class="partners-list__item-info">
+              <span class="partners-list__item-percent">
+                1,5%
+              </span>
+              <span class="partners-list__item-clarification">
+                Спасибо от суммы покупки
+              </span>
+            </p>
+            <img class="partners-list__item-img"
+            src="img/img_euroset.png"
+            alt="Предложение Евросети на Сбербанк Спасибо"
+            width="120"
+            height="120">
+            <p class="partners-list__item-title">
+
+            </p>
+          </li>
+        </ul>
+        <button class="partner-list__show-more-button">
+          Еще 4 партнера
+        </button>
+        </div>
+      </section>
+
+      <section class="offers">
+        <div class="container">
+          <h2>
+            3 предложения в категории «Электроника и бытовая техника»
+          </h2>
+          <ul class="offers__list">
+            <li class="offers__list-item">
+              <a class="offers__list-link" href="">
+                <img class="offers__list-title-img" src="img/img_technopark_goods.jpg"
+                  alt="Скидка от Технопарка на Сбербанк Спасибо" width="377" height="236">
+                <div class="offers__list-info-block">
+                  <img class="offers__list-logo" src="img/img_technopark_logo.png"
+                    alt="Скидки на товары в магазине Техномарт" width="50" height="50">
+                  <div class="offers__list-info">
+                    <p class="offers__list-company-title">
+                      Технопарк
+                    </p>
+                    <p class="offers__list-discount-title">
+                      20% спасибо за технику Electrolux
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="offers__list-item">
+              <a class="offers__list-link" href="">
+                <img class="offers__list-title-img" src="img/img_euroset_discount.jpg"
+                  alt="Скидка от Евросети в черную пятницу" width="377" height="236">
+                <div class="offers__list-info-block">
+                  <img class="offers__list-logo" src="img/img_euroset_logo.png"
+                    alt="Скидки на товары в магазине Евросеть" width="50" height="50">
+                  <div class="offers__list-info">
+                    <p class="offers__list-company-title">
+                      Евросеть
+                    </p>
+                    <p class="offers__list-discount-title">
+                      10% спасибо за покупки в черную пятницу
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li class="offers__list-item">
+              <a class="offers__list-link" href="">
+                <img class="offers__list-title-img" src="img/img_mvideo_discount.jpg"
+                  alt="Скидка от МВидео на Сбербанк Спасибо" width="377" height="236">
+                <div class="offers__list-info-block">
+                  <img class="offers__list-logo" src="img/img_mvideo_logo.png"
+                    alt="Выгодные предложения от МВидео на Сбербанк Спасибо" width="50" height="50">
+                  <div class="offers__list-info">
+                    <p class="offers__list-company-title">
+                      М.Видео
+                    </p>
+                    <p class="offers__list-discount-title">
+                      15% спасибо для студентов
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <button class="offers__show-more-button">
+            Еще 4 предложения
+          </button>
+        </div>
+      </section>
+
+      <section class="advantages">
+        <h2 class="visually-hidden">
+          Выгоды, купоны и другие выгодные предложения на Сбербанк Спасибо
+        </h2>
+        <div class="container advantages__wrapper">
+          <ul class="advantages__list advantages__list--long">
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_burger_king.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_5chka.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_respublika.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_megafon.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+                <img class="advantages__list-img"
+                src="img/img_ivi.png" alt=""
+                width="120"
+                height="120">
+              </a>
+            </li>
+          </ul>
+
+          <ul class="advantages__list">
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_bud_zdorov.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_5chka.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+                <img class="advantages__list-img"
+                src="img/img_litres.png" alt=""
+                width="120"
+                height="120">
+              </a>
+            </li>
+          </ul>
+
+          <ul class="advantages__list">
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_posuda_centr.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_lamoda.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+                <img class="advantages__list-img"
+                src="img/img_mytoys.png" alt=""
+                width="120"
+                height="120">
+              </a>
+            </li>
+          </ul>
+
+          <ul class="advantages__list advantages__list--long">
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_ozon.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_tez.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_booking_car.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+              <img class="advantages__list-img"
+              src="img/img_sberbank.png" alt=""
+              width="120"
+              height="120">
+              </a>
+            </li>
+            <li class="advantages__list-item">
+              <a href="">
+                <img class="advantages__list-img"
+                src="img/img_tripster.png" alt=""
+                width="120"
+                height="120">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+  </main>
+
+
+
+  <footer>
+    <div class="page-footer">
+      <div class="container">
+        <div class="page-footer__contacts-n-logo contacts-n-logo">
+          <p class="contacts-n-logo__contacts">
+            <span class="contacts-n-logo__contacts-tel">
+              900
+            </span>
+            <span>
+              По России бесплатно
+            </span>
+          </p>
+
+          <a class="contacts-n-logo__logo" href="">
+            <svg width="159" height="40" class="contacts-n-logo__logo-svg">
+              <use xlink:href="#icon-sberbank"></use>
+            </svg>
+          </a>
+        </div>
+
+        <nav class="page-footer__nav footer-nav">
+          <ul class="footer-nav__main-nav main-nav">
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Купоны и сертификаты
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Впечатления
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Авиабилеты
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Ж/д билеты
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Отели
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Каршеринг
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Театры
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Страхование
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Как подключиться
+              </a>
+            </li>
+            <li class="main-nav__item">
+              <a class="main-nav__item-link main-nav__item-link--footer" href="">
+                Партнеры
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="page-footer__socials socials">
+          <ul class="socials__application-list">
+            <li class="socials__application-list-item">
+              <a class="socials__application-list-link" href="">
+                <img src="img/img-google-play.png"
+                alt="Приложение спасибо от сбербанка в GooglePlay"
+                width="130"
+                height="40">
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="img/img_app_store_icon.png"
+                alt="Приложение спасибо от сбербанка в AppStore"
+                width="130"
+                height="40">
+              </a>
+            </li>
+          </ul>
+
+          <ul class="socials__networks-list">
+            <li class="socials__networks-list-item">
+              <a class="socials__networks-list-link" href="">
+                <svg width="40" height="40" class="socials__networks-list-svg">
+                  <use xlink:href="#icon-ok"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__networks-list-item">
+              <a class="socials__networks-list-link" href="">
+                <svg width="40" height="40" class="socials__networks-list-svg">
+                  <use xlink:href="#icon-fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__networks-list-item">
+              <a class="socials__networks-list-link" href="">
+                <svg width="40" height="40" class="socials__networks-list-svg">
+                  <use xlink:href="#icon-vk"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="socials__networks-list-item">
+              <a class="socials__networks-list-link" href="">
+                <svg width="40" height="40" class="socials__networks-list-svg">
+                  <use xlink:href="#icon-inst"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <div class="page-footer__disclaimer disclaimer-block">
+          <small class="disclaimer-block__copyright">
+            © 1997—2019 ПАО Сбербанк.
+          </small>
+          <small class="disclaimer-block__page-disclaimer">
+            <a href="">Политика</a> АО «ЦПЛ» в отношении обработки персональных данных и
+            <a href="">Согласие</a> на обработку данных участника Программы «Спасибо от Сбербанка»
+          </small>
+        </div>
+
+      </div>
+    </div>
+  </footer>
 
 
   <div class="visually-hidden">

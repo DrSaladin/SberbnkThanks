@@ -1,0 +1,98 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width,initial-scale=1')
+  title Спасибо от Сбербанка
+  link(rel='stylesheet' href='css/style.min.css')
+  link(rel='preload' href='fonts/Geometria-Bold.woff' as='font' type='font/woff')
+  link(rel='preload' href='fonts/Geometria-Bold.woff2' as='font' type='font/woff2')
+  link(rel='preload' href='fonts/Geometria-normal.woff' as='font' type='font/woff')
+  link(rel='preload' href='fonts/Geometria-Regular.woff2' as='font' type='font/woff2')
+header.page-header
+  nav.page-nav
+    .container.page-nav__wrapper
+      a.page-nav__logo-link(href='index.html')
+        img(src='img/logo_sberbank_thanks.png' alt='Спасибо от сбербанка' width='180' height='80')
+    button.page-nav__hamburger.page-nav__hamburger--mobile(type='button')
+
+    ul.page-nav__main-nav.main-nav
+      each value, index in {'Купоны и сертификаты' : '1', 'Впечатления' : '2', 'Авиабилеты' : '3','Ж/д билеты' : '4','Отели' : '5','Каршеринг' : '6','Театры' : '7','Страхование' : '8','Как подключиться' : '9','Партнеры' : '10',}
+        li.main-nav__item
+          a.main-nav__item-link(href= "/" + value + ".html")= index
+
+    .page-nav__coord.user-coord
+      a.user-coord__link(href="")
+        svg.user-coord__svg(width="22" height="21")
+          use(xlink:href="#icon-location-triangle")
+        |Санкт-Петербург
+      p.user-coord__popup-option.visually-hidden
+        span.user-coord__city-question Ваш город - Санкт-Петербург?
+        button.user-coord__change-city-button
+          |Сменить город
+
+    button.user-coord__signin-button
+      |Войти
+main
+  h1.visually-hidden
+    |Выгодные предложения от Сбербанк Спасибо
+  section.partners
+    .container
+      h2.offers__title
+        |Партнеры и предложения
+      form.partners__form.partners-form(action="")
+        each title, id in {'all-partners' : 'Все партнеры', 'popular-partners' : 'Популярные', 'supermarket-partners' : 'Супермаркеты', 'cafe-partners' : 'Кафе и рестораны', 'taxi-partners' : 'Такси', 'beauty-partners' : 'Красота', 'utilities-partners' : 'Электроника и бытовая техника', 'zooshop-partners' : 'Зоотовары', 'theatre-partners' : 'Кино и театр'}
+          label.partners-form__label(for=id)= title
+          input(type="checkbox").partners-form__checkbox(id=id)(name=id)
+        button.partners-form__show-more-button
+          |...
+
+        .partners-form__options-toggle.two-option-toggle
+          p.two-option-toggle__first-option
+            | Начисляют спасибо
+          label(for="give-or-take")
+            input(type="checkbox")#give-or-take
+          p.two-option-toggle__second-option
+            | Принимают спасибо
+      -
+        var cards = [{img: 'img/img_mvideo1x.png', alt: 'МВидео', percent: '1,5%'},
+          {img: 'img/img_burger_king.png', alt: 'Бургер Кинг', percent: '3%'},
+          {img: 'img/img_technopark1x.png', alt: 'Технопарк', percent: '4,5%'},
+          {img: 'img/img_bork.png', alt: 'Борк', percent: 'От 1,5%'},
+          {img: 'img/img_euroset.png', alt: 'Евросеть', percent: '1,5%'}];
+
+      ul.partners-list
+        each item in cards
+          li.partners-list__item
+            p.partners-list__item-info
+              span.partners-list__item-percent= item.percent
+              span.partners-list__item-clarification
+                | Спасибо от суммы покупки
+            img(src=item.img, alt="Предложение от " + item.alt + " на Сбербанк Спасибо", width="120" height="120").partners-list__item-img
+            p.partners-list__item-title= item.alt
+      button.partner-list__show-more-button
+        | Еще 4 партнера
+
+
+  section.offers
+    .container
+      h2.offers__title
+        | 3 предложения в категории «Электроника и бытовая техника»
+
+      -
+        var discounts = [{img1 = 'img/img_technopark_goods.jpg', alt1 = 'Скидка от Технопарка на Сбербанк Спасибо', text = '20% спасибо за технику Electrolux', title = 'Технопарк', logo = 'img/img_technopark_logo.png'},
+          {img1 = 'img/img_euroset_discount.jpg', alt1 = 'Скидки на товары в магазине Евросеть', text = '10% спасибо за покупки в черную пятницу', title = 'Евросеть', logo = 'img/img_euroset_logo.png'},
+          {img1 = 'img/img_mvideo_discount.jpg', alt1 = 'Скидка от МВидео на Сбербанк Спасибо', text = '15% спасибо для студентов', title = 'М.Видео', logo = 'img/img_mvideo_logo.png'}];
+
+      ul.offers__list
+        each item in discounts
+          li.offers__list-item
+            a(href="").offers__list-link
+              img(src=item.img, alt=item.alt).offers__list-title-img
+              .offers__list-info-block
+                img(src=item.logo, alt=item.alt)
+                .offers__list-info
+                  p.offers__list-company-title= item.title
+                  p.offers__list-discount-title= item.text
+
+
+
