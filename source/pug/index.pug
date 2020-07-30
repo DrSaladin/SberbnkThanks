@@ -79,20 +79,28 @@ main
         | 3 предложения в категории «Электроника и бытовая техника»
 
       -
-        var discounts = [{img1 = 'img/img_technopark_goods.jpg', alt1 = 'Скидка от Технопарка на Сбербанк Спасибо', text = '20% спасибо за технику Electrolux', title = 'Технопарк', logo = 'img/img_technopark_logo.png'},
-          {img1 = 'img/img_euroset_discount.jpg', alt1 = 'Скидки на товары в магазине Евросеть', text = '10% спасибо за покупки в черную пятницу', title = 'Евросеть', logo = 'img/img_euroset_logo.png'},
-          {img1 = 'img/img_mvideo_discount.jpg', alt1 = 'Скидка от МВидео на Сбербанк Спасибо', text = '15% спасибо для студентов', title = 'М.Видео', logo = 'img/img_mvideo_logo.png'}];
+        var discounts = [{img: 'img/img_technopark_goods.jpg', alt: 'Скидка от Технопарка на Сбербанк Спасибо', text: '20% спасибо за технику Electrolux', title: 'Технопарк', logo: 'img/img_technopark_logo.png'},
+          {img: 'img/img_euroset_discount.jpg', alt: 'Скидки на товары в магазине Евросеть', text: '10% спасибо за покупки в черную пятницу', title: 'Евросеть', logo: 'img/img_euroset_logo.png'},
+          {img: 'img/img_mvideo_discount.jpg', alt: 'Скидка от МВидео на Сбербанк Спасибо', text: '15% спасибо для студентов', title: 'М.Видео', logo: 'img/img_mvideo_logo.png'}];
 
       ul.offers__list
         each item in discounts
           li.offers__list-item
             a(href="").offers__list-link
-              img(src=item.img, alt=item.alt).offers__list-title-img
+              img(src=item.img, alt=item.alt, width="377", height="236").offers__list-title-img
               .offers__list-info-block
-                img(src=item.logo, alt=item.alt)
+                img(src=item.logo, alt=item.alt, width="50", height="50")
                 .offers__list-info
                   p.offers__list-company-title= item.title
                   p.offers__list-discount-title= item.text
+      button.offers__show-more-button
+        | Еще 4 предложения
+
+  section.advantages
+    h2.visually-hidden
+      | Выгоды, купоны и другие выгодные предложения на Сбербанк Спасибо
+    .container.advantages__wrapper
+
 
 
 
