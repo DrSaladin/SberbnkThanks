@@ -9,66 +9,99 @@ head
   link(rel='preload' href='fonts/Geometria-normal.woff' as='font' type='font/woff')
   link(rel='preload' href='fonts/Geometria-Regular.woff2' as='font' type='font/woff2')
 header.page-header
-  nav.page-nav
-    .container.page-nav__wrapper
-      a.page-nav__logo-link(href='index.html')
-        img(src='img/logo_sberbank_thanks.png' alt='Спасибо от сбербанка' width='180' height='80')
-    button.page-nav__hamburger.page-nav__hamburger--mobile(type='button')
+  .page-header_wrapper
+    .page-nav
+      .container.page-nav__wrapper
+        a.page-nav__logo-link(href='index.html')
+          img(src='img/logo_sberbank_thanks.png' alt='Спасибо от сбербанка' width='180' height='80')
 
-    ul.page-nav__main-nav.main-nav
-      each value, index in {'Купоны и сертификаты' : '1', 'Впечатления' : '2', 'Авиабилеты' : '3','Ж/д билеты' : '4','Отели' : '5','Каршеринг' : '6','Театры' : '7','Страхование' : '8','Как подключиться' : '9','Партнеры' : '10',}
-        li.main-nav__item
-          a.main-nav__item-link(href= "/" + value + ".html")= index
+        -
+          var navigation = [
+          {title: 'Купоны и сертификаты', link: 'apple-music.html'},
+          {title: 'Впечатления', link: ' '},
+          {title: 'Авиабилеты', link: ' '},
+          {title: 'Ж/д билеты', link: ' '},
+          {title: 'Отели', link: ' '},
+          {title: 'Каршеринг', link: ' '},
+          {title: 'Театры', link: ' '},
+          {title: 'Страхование', link: ' '},
+          {title: 'Как подключиться', link: ' '},
+          {title: 'Партнеры', link: ' '}];
 
-    .page-nav__coord.user-coord
-      a.user-coord__link(href="")
-        svg.user-coord__svg(width="22" height="21")
-          use(xlink:href="#icon-location-triangle")
-        |Санкт-Петербург
-      p.user-coord__popup-option.visually-hidden
-        span.user-coord__city-question Ваш город - Санкт-Петербург?
-        button.user-coord__change-city-button
-          |Сменить город
+        ul.page-nav__main-nav.main-nav
+          each item in navigation
+            li.main-nav__item
+              a.main-nav__item-link(href= item.link)= item.title
+        button.page-nav__hamburger.page-nav__hamburger--mobile.visually-hidden(type='button')
 
-    button.user-coord__signin-button
-      |Войти
+        .user-block
+          .user-block__coord-select.coord-select
+            a.coord-select__link(href="")
+              img(src="img/icon_location_triangle.svg", width="22" height="21")
+              |Санкт-Петербург
+            p.coord-select__popup.visually-hidden
+              span.coord-select__current-city Ваш город - Санкт-Петербург?
+              button.coord-select__change-city-button
+                |Сменить город
+
+            .user-block__search-n-signin
+              button.user-block__search-button
+                img(src="img/icon_search-full.svg", width="24" height="24")
+              a.user-block__signin-button(href="")
+                | Войти
+
 main
   h1.visually-hidden
     |Выгодные предложения от Сбербанк Спасибо
   section.partners
     .container
-      h2.offers__title
+      h2.partners__title
         |Партнеры и предложения
       form.partners__form.partners-form(action="")
-        each title, id in {'all-partners' : 'Все партнеры', 'popular-partners' : 'Популярные', 'supermarket-partners' : 'Супермаркеты', 'cafe-partners' : 'Кафе и рестораны', 'taxi-partners' : 'Такси', 'beauty-partners' : 'Красота', 'utilities-partners' : 'Электроника и бытовая техника', 'zooshop-partners' : 'Зоотовары', 'theatre-partners' : 'Кино и театр'}
-          label.partners-form__label(for=id)= title
-          input(type="checkbox").partners-form__checkbox(id=id)(name=id)
-        button.partners-form__show-more-button
-          |...
+        .partners__options
+
+          -
+            var partners = [{id: 'all-partners', text: 'Все партнеры'},
+            {id: 'popular-partners', text: 'Популярные'},
+            {id: 'supermarket-partners', text: 'Супермаркеты'},
+            {id: 'cafe-partners', text: 'Кафе и рестораны'},
+            {id: 'taxi-partners', text: 'Такси'},
+            {id: 'beauty-partners', text: 'Красота'},
+            {id: 'utilities-partners', text: 'Электроника и бытовая техника'},
+            {id: 'zooshop-partners', text: 'Зоотовары'},
+            {id: 'theatre-partners', text: 'Кино и театр'}];
+
+          each item in partners
+            input(type="checkbox").partners-form__checkbox.visually-hidden(id=item.id)(name=item.id)
+            label.partners-form__label(for=item.id)= item.text
+          button.partners-form__show-more-button
+            |. . .
 
         .partners-form__options-toggle.two-option-toggle
-          p.two-option-toggle__first-option
-            | Начисляют спасибо
-          label(for="give-or-take")
-            input(type="checkbox")#give-or-take
-          p.two-option-toggle__second-option
-            | Принимают спасибо
+          label.two-option-toggle__label(for="give-or-take")
+            span.two-option-toggle__first-option
+              | Начисляют спасибо
+            input.two-option-toggle__input#give-or-take.visually-hidden(type="checkbox")
+            span.two-option-toggle__slider
+            span.two-option-toggle__second-option
+              | Принимают спасибо
+
       -
-        var cards = [{img: 'img/img_mvideo1x.png', alt: 'МВидео', percent: '1,5%'},
-          {img: 'img/img_burger_king.png', alt: 'Бургер Кинг', percent: '3%'},
-          {img: 'img/img_technopark1x.png', alt: 'Технопарк', percent: '4,5%'},
-          {img: 'img/img_bork.png', alt: 'Борк', percent: 'От 1,5%'},
-          {img: 'img/img_euroset.png', alt: 'Евросеть', percent: '1,5%'}];
+        var cards = [{img: 'img/img_mvideo1x.png', alt: 'МВидео ', title: 'М.видео', percent: '1,5% '},
+          {img: 'img/img_burger_king.png', alt: 'Бургер Кинг ', title: 'Burger King', percent: '3% '},
+          {img: 'img/img_technopark1x.png', alt: 'Технопарк ', title: 'Технопарк', percent: '4,5% '},
+          {img: 'img/img_bork.png', alt: 'Борк ', title: 'Bork', percent: 'От 1,5% '},
+          {img: 'img/img_euroset.png', alt: 'Евросеть ', title: 'Евросеть', percent: '1,5% '}];
 
       ul.partners-list
         each item in cards
           li.partners-list__item
-            p.partners-list__item-info
-              span.partners-list__item-percent= item.percent
-              span.partners-list__item-clarification
+            a(href="").partners-list__item-link
+              p.partners-list__item-percent= item.percent
+              p.partners-list__item-clarification
                 | Спасибо от суммы покупки
-            img(src=item.img, alt="Предложение от " + item.alt + " на Сбербанк Спасибо", width="120" height="120").partners-list__item-img
-            p.partners-list__item-title= item.alt
+              img(src= item.img, alt="Предложение от " + item.alt + " на Сбербанк Спасибо", width="120" height="120").partners-list__item-img
+              p.partners-list__item-title= item.title
       button.partner-list__show-more-button
         | Еще 4 партнера
 
@@ -89,7 +122,7 @@ main
             a(href="").offers__list-link
               img(src=item.img, alt=item.alt, width="377", height="236").offers__list-title-img
               .offers__list-info-block
-                img(src=item.logo, alt=item.alt, width="50", height="50")
+                img(src=item.logo, alt=item.alt, width="50", height="50").offers__list-info-logo
                 .offers__list-info
                   p.offers__list-company-title= item.title
                   p.offers__list-discount-title= item.text
@@ -100,6 +133,135 @@ main
     h2.visually-hidden
       | Выгоды, купоны и другие выгодные предложения на Сбербанк Спасибо
     .container.advantages__wrapper
+      .advantages__list-wrapper
+        -
+          var advantages = [
+            {img: 'img/img_burger_king.png', alt: 'Выгодные предложения от Бургер Кинг на Сбербанк Спасибо'},
+            {img: 'img/img_5chka.png', alt: 'Выгодные предложения от Пятерочки на Сбербанк Спасибо'},
+            {img: 'img/img_respublika.png', alt: 'Выгодные предложения от Республики на Сбербанк Спасибо'},
+            {img: 'img/img_megafon.png', alt: 'Выгодные предложения от Мегафон на Сбербанк Спасибо'},
+            {img: 'img/img_ivi.png', alt: 'Выгодные предложения от ivi на Сбербанк Спасибо'}
+          ];
+
+        ul.advantages__list.advantages__list--long.advantages__list--discounts
+          each item in advantages
+            li.advantages__list-item
+              a.advantages__list-item-link
+                img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
+
+      .advantages__list-wrapper
+        -
+          var advantages = [
+            {img: 'img/img_bud_zdorov.png', alt: 'Выгодные предложения от Будь Здоров на Сбербанк Спасибо'},
+            {img: 'img/img_5chka.png', alt: 'Выгодные предложения от Пятерочки на Сбербанк Спасибо'},
+            {img: 'img/img_litres.png', alt: 'Выгодные предложения от Литрес на Сбербанк Спасибо'},
+            ];
+
+        ul.advantages__list.advantages__list--percents
+          each item in advantages
+            li.advantages__list-item.advantages__list-item--percents
+              a.advantages__list-item-link
+                img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
+
+        -
+          var advantages = [
+            {img: 'img/img_posuda_centr.png', alt: 'Выгодные предложения от Посудацентр на Сбербанк Спасибо'},
+            {img: 'img/img_lamoda.png', alt: 'Выгодные предложения от Lamoda на Сбербанк Спасибо'},
+            {img: 'img/img_mytoys.png', alt: 'Выгодные предложения от MyToys на Сбербанк Спасибо'},
+            ];
+
+        ul.advantages__list.advantages__list--coupon
+          each item in advantages
+            li.advantages__list-item
+              a.advantages__list-item-link
+                img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
+
+
+      .advantages__list-wrapper
+        -
+          var advantages = [
+            {img: 'img/img_ozon.png', alt: 'Выгодные предложения от Ozon на Сбербанк Спасибо'},
+            {img: 'img/img_tez.png', alt: 'Выгодные предложения от Tez Tour на Сбербанк Спасибо'},
+            {img: 'img/img_booking_car.png', alt: 'Выгодные предложения от Booking Car на Сбербанк Спасибо'},
+            {img: 'img/img_sberbank.png', alt: 'Выгодные предложения от Сбербанк на Сбербанк Спасибо'},
+            {img: 'img/img_tripster.png', alt: 'Выгодные предложения от Tripster на Сбербанк Спасибо'}
+          ];
+
+        ul.advantages__list.advantages__list--long.advantages__list--personal-offer
+          each item in advantages
+            li.advantages__list-item
+              a.advantages__list-item-link
+                img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
+
+footer.page-footer
+    .container
+      .page-footer__nav-block
+          p.page-footer__contacts
+            span.page-footer__contacts-tel
+              | 900
+            br
+            span.page-footer__contacts-info
+              | По России бесплатно
+
+          nav.page-footer__nav
+            -
+              var navigation = [
+              {title: 'Купоны и сертификаты', link: ' '},
+              {title: 'Впечатления', link: ' '},
+              {title: 'Авиабилеты', link: ' '},
+              {title: 'Ж/д билеты', link: ' '},
+              {title: 'Отели', link: ' '},
+              {title: 'Каршеринг', link: ' '},
+              {title: 'Театры', link: ' '},
+              {title: 'Страхование', link: ' '},
+              {title: 'Как подключиться', link: ' '},
+              {title: 'Партнеры', link: ' '}];
+
+            ul.main-nav.main-nav--footer
+              each item in navigation
+                li.main-nav__item
+                  a.main-nav__item-link(href= item.link)= item.title
+
+
+      .page-footer__socials-block
+        a(href="").contacts-n-logo__logo
+            img(src="img/icon_sberbank_footer_logo.svg", alt="Спасибо от Сбербанка")
+
+        .page-footer__socials.socials
+          ul.socials__application-list
+            li.socials__application-list-item
+              a(href="").socials__application-list-link
+                img(src="img/img-google-play.png", alt="Приложение спасибо от сбербанка в GooglePlay" width="130" height="40")
+            li.socials__application-list-item
+              a(href="").socials__application-list-link
+                img(src="img/img_app_store_icon.png", alt="Приложение спасибо от сбербанка в AppStore" width="130" height="40")
+
+          -
+            var icons = [
+              {img: 'img/icon_ok.svg'},
+              {img: 'img/icon_fb.svg'},
+              {img: 'img/icon_vk.svg'},
+              {img: 'img/icon_inst.svg'}
+            ];
+
+          ul.socials__networks-list
+            each item in icons
+              li.socials__networks-list-item
+                a(href="").socials__networks-list-link
+                  img(src=item.img, alt="Следите за нами в социальных сетях").socials__networks-list-img
+
+      .page-footer__disclaimer.disclaimer-block
+        small.disclaimer-block__copyright
+          | © 1997—2019 ПАО Сбербанк.
+        small.disclaimer-block__page-disclaimer
+          | <a href=""> Политика </a> АО «ЦПЛ» в отношении обработки персональных данных и <a href=""> Согласие </a> на обработку данных участника Программы «Спасибо от Сбербанка»
+
+
+script(src="../node_modules/picturefill/dist/picturefill.js")
+
+
+
+
 
 
 

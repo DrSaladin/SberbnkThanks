@@ -1,0 +1,68 @@
+.partners {
+  margin-bottom: 120px;
+}
+
+.partners__title {
+  font-family: @geometria-font;
+  color: @color-black;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 52px;
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+.partners__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.partners-form__label {
+  font-family: @geometria-font;
+  font-size: 18px;
+  line-height: 47px;
+  color: @color-black;
+  align-items: center;
+  text-align: center;
+  min-width: 151px;
+  min-height: 48px;
+  cursor: pointer;
+  padding: 0 15px;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.partners-form__show-more-button {
+  border: none;
+  cursor: pointer;
+  background-color: @color-white;
+  width: 65px;
+  height: 48px;
+  border-radius: 10px;
+  font-family: @geometria-font;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.partners-form__label:hover,
+.partners-form__show-more-button:hover {
+  background-color: @color-green;
+  color: @color-white;
+  opacity: 0.7;
+}
+
+.partners-form__checkbox:checked + .partners-form__label {
+  background-color: @color-green;
+  color: @color-white;
+  opacity: 0.9;
+}
+
+.partners-form__show-more-button:active {
+  background-color: @color-green;
+  color: @color-white;
+  opacity: 0.9;
+}
