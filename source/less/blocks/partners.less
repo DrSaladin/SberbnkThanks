@@ -46,6 +46,12 @@
   font-family: @geometria-font;
   font-size: 18px;
   line-height: 24px;
+
+  &:active {
+    background-color: @color-green;
+    color: @color-white;
+    opacity: 0.9;
+  }
 }
 
 .partners-form__label:hover,
@@ -56,12 +62,6 @@
 }
 
 .partners-form__checkbox:checked + .partners-form__label {
-  background-color: @color-green;
-  color: @color-white;
-  opacity: 0.9;
-}
-
-.partners-form__show-more-button:active {
   background-color: @color-green;
   color: @color-white;
   opacity: 0.9;

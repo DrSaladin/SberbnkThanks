@@ -19,20 +19,20 @@
   &:focus {
     opacity: 0.9;
   }
-}
 
-.page-tags__link:nth-of-type(odd) {
-  margin-right: 15px;
-}
+  &:nth-of-type(odd) {
+    margin-right: 15px;
+  }
 
-.page-tags__link:nth-of-type(odd)::after {
-  content: "";
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background-color: @color-black;
-  opacity: 0.5;
-  top: 8px;
-  right: -9px;
+  &:nth-of-type(odd)::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: @color-black;
+    opacity: 0.5;
+    top: 8px;
+    right: -9px;
+  }
 }

@@ -50,18 +50,18 @@
 .apple-music-sub__list-item {
   list-style: none;
   position: relative;
-}
 
-.apple-music-sub__list-item::before {
-  content: "";
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: @color-black;
-  opacity: 0.5;
-  left: -15px;
-  top: 15px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: @color-black;
+    opacity: 0.5;
+    left: -15px;
+    top: 15px;
+  }
 }
 
 .apple-music-sub__instruction {
@@ -113,10 +113,10 @@
   &:focus {
     opacity: 0.9;
   }
-}
 
-.apple-music-sub__in-details-link:last-of-type {
-  margin-bottom: 65px;
+  &:last-of-type {
+    margin-bottom: 65px;
+  }
 }
 
 .apple-music-sub__disclamer {

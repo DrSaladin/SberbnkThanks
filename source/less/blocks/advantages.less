@@ -17,6 +17,22 @@
   display: flex;
   box-sizing: border-box;
   position: relative;
+
+  &::after {
+    content: "";
+    width: 187px;
+    height: 42px;
+    background-color: @color-white;
+    position: absolute;
+    bottom: -30px;
+    font-family: @geometria-font;
+    font-weight: 500;
+    font-size: 16px;
+    color: @color-black;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0 0 30px 30px;
+  }
 }
 
 .advantages__list--long {
@@ -25,44 +41,28 @@
   margin-right: 0;
 }
 
-.advantages__list::after {
-  content: '';
-  width: 187px;
-  height: 42px;
-  background-color: @color-white;
-  position: absolute;
-  bottom: -30px;
-  font-family: @geometria-font;
-  font-weight: 500;
-  font-size: 16px;
-  color: @color-black;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 0 0 30px 30px;
-}
-
 
 .advantages__list--discounts::after {
-  content: 'Скидки за бонусы';
+  content: "Скидки за бонусы";
   width: 187px;
   left: 240px;
 }
 
 
 .advantages__list--personal-offer::after {
-  content: 'Персональное исходя из трат';
+  content: "Персональное исходя из трат";
   width: 327px;
   left: 170px;
 }
 
 .advantages__list--coupon::after {
-  content: 'Выгодные купоны';
+  content: "Выгодные купоны";
   width: 227px;
   left: 90px;
 }
 
 .advantages__list--percents::after {
-  content: 'Большой % начисления';
+  content: "Большой % начисления";
   width: 227px;
   left: 90px;
 }
@@ -73,42 +73,44 @@
   position: relative;
 }
 
-.advantages__list-item--percents::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: @color-black;
-  border-radius: 50%;
-  z-index: 2;
-  right: 5px;
-  top: -10px;
-}
+.advantages__list-item--percents {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 17px;
+    font-family: @geometria-font;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: @color-white;
+    z-index: 3;
+  }
 
-.advantages__list-item--percents::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: 17px;
-  font-family: @geometria-font;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
-  color: @color-white;
-  z-index: 3;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: @color-black;
+    border-radius: 50%;
+    z-index: 2;
+    right: 5px;
+    top: -10px;
+  }
 
-.advantages__list-item--percents:nth-of-type(1)::before {
-  content: "3%";
-}
+  &:nth-of-type(1)::before {
+    content: "3%";
+  }
 
-.advantages__list-item--percents:nth-of-type(2)::before {
-  content: "1.5%";
-  right: 11px;
-}
+  &:nth-of-type(2)::before {
+    content: "1.5%";
+    right: 11px;
+  }
 
-.advantages__list-item--percents:nth-of-type(3)::before {
-  content: "5%";
+  &:nth-of-type(3)::before {
+    content: "5%";
+  }
 }
 
 .advantages__list-wrapper {
