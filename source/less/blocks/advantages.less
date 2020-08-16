@@ -1,3 +1,8 @@
+.advantages {
+  padding: 60px 0 170px;
+  box-sizing: border-box;
+}
+
 .advantages__wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -5,23 +10,22 @@
 }
 
 .advantages__list {
-  width: 420px;
-  height: 158px;
-  border-radius: 79px;
+  width: 158px;
+  height: 420px;
+  border-radius: 80px 80px 0 0;
   background-color: @color-white;
-  margin: 0;
-  margin-right: 40px;
-  margin-bottom: 80px;
+  margin: 0 auto 120px;
   padding: 19px;
   list-style: none;
   display: flex;
   box-sizing: border-box;
   position: relative;
+  flex-direction: column;
 
   &::after {
     content: "";
     width: 187px;
-    height: 42px;
+    height: 80px;
     background-color: @color-white;
     position: absolute;
     bottom: -30px;
@@ -30,46 +34,49 @@
     font-size: 16px;
     color: @color-black;
     text-align: center;
-    line-height: 40px;
-    border-radius: 0 0 30px 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0 0 80px 80px;
   }
 }
 
 .advantages__list--long {
-  width: 680px;
+  height: 680px;
   position: relative;
-  margin-right: 0;
 }
 
 
 .advantages__list--discounts::after {
   content: "Скидки за бонусы";
-  width: 187px;
-  left: 240px;
+  width: 158px;
+  left: 0;
+  bottom: -80px;
 }
 
 
 .advantages__list--personal-offer::after {
   content: "Персональное исходя из трат";
-  width: 327px;
-  left: 170px;
+  width: 158px;
+  left: 0;
+  bottom: -80px;
 }
 
 .advantages__list--coupon::after {
   content: "Выгодные купоны";
-  width: 227px;
-  left: 90px;
+  width: 158px;
+  left: 0;
+  bottom: -80px;
 }
 
 .advantages__list--percents::after {
   content: "Большой % начисления";
-  width: 227px;
-  left: 90px;
+  width: 158px;
+  left: 0;
+  bottom: -80px;
 }
 
-
 .advantages__list-item {
-  margin-right: 10px;
+  margin-bottom: 5px;
   position: relative;
 }
 
@@ -128,3 +135,77 @@
   color: @color-black;
   position: absolute;
 }
+
+.advantages__list-item-link {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    opacity: 0.9;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .advantages__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .advantages__list {
+    width: 420px;
+    height: 158px;
+    border-radius: 80px;
+    margin: 0 40px 80px 0;
+    flex-direction: row;
+
+    &::after {
+      content: "";
+      height: 42px;
+      position: absolute;
+      bottom: -30px;
+      line-height: 40px;
+      border-radius: 0 0 30px 30px;
+      padding: 0;
+    }
+  }
+
+  .advantages__list--long {
+    width: 680px;
+    position: relative;
+    margin-right: 0;
+  }
+
+
+  .advantages__list--discounts::after {
+    content: "Скидки за бонусы";
+    width: 187px;
+    left: 240px;
+  }
+
+
+  .advantages__list--personal-offer::after {
+    content: "Персональное исходя из трат";
+    width: 327px;
+    left: 170px;
+  }
+
+  .advantages__list--coupon::after {
+    content: "Выгодные купоны";
+    width: 227px;
+    left: 90px;
+  }
+
+  .advantages__list--percents::after {
+    content: "Большой % начисления";
+    width: 227px;
+    left: 90px;
+  }
+
+  .advantages__list-item {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: @desktop-width) {}

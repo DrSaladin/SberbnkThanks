@@ -3,10 +3,27 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .socials__networks-list-img {
   border-radius: 10px;
+}
+
+.socials__application-list-item {
+  margin-bottom: 40px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.socials__networks-list-item {
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .socials__application-list-link {
@@ -28,3 +45,16 @@
     opacity: 0.9;
   }
 }
+
+@media (min-width: @tablet-width) {
+  .socials__application-list-item {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+
+  .socials__application-list {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {}

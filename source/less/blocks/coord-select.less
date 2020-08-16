@@ -1,5 +1,5 @@
 .coord-select {
-  margin-bottom: 15px;
+  padding: 10px;
 }
 
 .coord-select__link {
@@ -10,4 +10,30 @@
   opacity: 0.5;
   text-decoration: none;
   white-space: nowrap;
+  margin-bottom: 30px;
+  display: block;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    opacity: 0.9;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .coord-select {
+    margin-bottom: 15px;
+    padding: 0;
+  }
+
+  .coord-select__link {
+    margin-bottom: 30px;
+    display: block;
+  }
+}
+
+@media (min-width: @desktop-width) {
+
 }

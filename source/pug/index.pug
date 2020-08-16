@@ -9,53 +9,55 @@ head
   link(rel='preload' href='fonts/Geometria-normal.woff' as='font' type='font/woff')
   link(rel='preload' href='fonts/Geometria-Regular.woff2' as='font' type='font/woff2')
 header.page-header
-  .page-header_wrapper
-    .page-nav
-      .container.page-nav__wrapper
-        a.page-nav__logo-link(href='index.html')
-          img(src='img/logo_sberbank_thanks.png' alt='Спасибо от сбербанка' width='180' height='80')
+  .page-nav.page-nav--nomagic
+    .container.page-nav__wrapper
+      a.page-nav__logo-link(href='index.html')
+        img(src='img/logo_sberbank_thanks.png' alt='Спасибо от сбербанка' width='180' height='80').page-nav__logo-img
 
-        -
-          var navigation = [
-          {title: 'Купоны и сертификаты', link: 'apple-music.html'},
-          {title: 'Впечатления', link: ' '},
-          {title: 'Авиабилеты', link: ' '},
-          {title: 'Ж/д билеты', link: ' '},
-          {title: 'Отели', link: ' '},
-          {title: 'Каршеринг', link: ' '},
-          {title: 'Театры', link: ' '},
-          {title: 'Страхование', link: ' '},
-          {title: 'Как подключиться', link: ' '},
-          {title: 'Партнеры', link: ' '}];
+      button(type='button').page-nav__hamburger
 
-        ul.page-nav__main-nav.main-nav
-          each item in navigation
-            li.main-nav__item
-              a.main-nav__item-link(href= item.link)= item.title
-        button.page-nav__hamburger.page-nav__hamburger--mobile.visually-hidden(type='button')
+      -
+        var navigation = [
+        {title: 'Купоны и сертификаты', link: 'apple-music.html'},
+        {title: 'Впечатления', link: ' '},
+        {title: 'Авиабилеты', link: ' '},
+        {title: 'Ж/д билеты', link: ' '},
+        {title: 'Отели', link: ' '},
+        {title: 'Каршеринг', link: ' '},
+        {title: 'Театры', link: ' '},
+        {title: 'Страхование', link: ' '},
+        {title: 'Как подключиться', link: ' '},
+        {title: 'Партнеры', link: ' '}];
 
-        .user-block
-          .user-block__coord-select.coord-select
-            a.coord-select__link(href="")
-              img(src="img/icon_location_triangle.svg", width="22" height="21")
-              |Санкт-Петербург
-            p.coord-select__popup.visually-hidden
-              span.coord-select__current-city Ваш город - Санкт-Петербург?
-              button.coord-select__change-city-button
-                |Сменить город
+      ul.page-nav__main-nav.main-nav
+        each item in navigation
+          li.main-nav__item.main-nav__item--header
+            a.main-nav__item-link(href= item.link)= item.title
 
-            .user-block__search-n-signin
-              button.user-block__search-button
-                img(src="img/icon_search-full.svg", width="24" height="24")
-              a.user-block__signin-button(href="")
-                | Войти
+
+      .user-block
+        .user-block__coord-select.coord-select
+          a.coord-select__link(href="")
+            img(src="img/icon_location_triangle.svg", width="22" height="21")
+            |Санкт-Петербург
+          p.coord-select__popup.visually-hidden
+            span.coord-select__current-city Ваш город - Санкт-Петербург?
+            button.coord-select__change-city-button
+              |Сменить город
+
+          .user-block__search-n-signin
+            button.user-block__search-button
+              img(src="img/icon_search-full.svg", width="24" height="24")
+            a.user-block__signin-button(href="")
+              | Войти
+
 
 main
   h1.visually-hidden
     |Выгодные предложения от Сбербанк Спасибо
   section.partners
     .container
-      h2.partners__title
+      h2.partners__title.page-title
         |Партнеры и предложения
       form.partners__form.partners-form(action="")
         .partners__options
@@ -72,18 +74,18 @@ main
             {id: 'theatre-partners', text: 'Кино и театр'}];
 
           each item in partners
-            input(type="checkbox").partners-form__checkbox.visually-hidden(id=item.id)(name=item.id)
-            label.partners-form__label(for=item.id)= item.text
+            input(type="checkbox").partners-form__checkbox.visually-hidden(id=item.id name=item.id)
+            label.partners-form__label(for=item.id tabindex="0")= item.text
           button.partners-form__show-more-button
             |. . .
 
         .partners-form__options-toggle.two-option-toggle
           label.two-option-toggle__label(for="give-or-take")
-            span.two-option-toggle__first-option
+            span(tabindex="0").two-option-toggle__first-option
               | Начисляют спасибо
             input.two-option-toggle__input#give-or-take.visually-hidden(type="checkbox")
             span.two-option-toggle__slider
-            span.two-option-toggle__second-option
+            span(tabindex="0").two-option-toggle__second-option
               | Принимают спасибо
 
       -
@@ -146,7 +148,7 @@ main
         ul.advantages__list.advantages__list--long.advantages__list--discounts
           each item in advantages
             li.advantages__list-item
-              a.advantages__list-item-link
+              a(href="").advantages__list-item-link
                 img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
 
       .advantages__list-wrapper
@@ -160,7 +162,7 @@ main
         ul.advantages__list.advantages__list--percents
           each item in advantages
             li.advantages__list-item.advantages__list-item--percents
-              a.advantages__list-item-link
+              a(href="").advantages__list-item-link
                 img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
 
         -
@@ -173,7 +175,7 @@ main
         ul.advantages__list.advantages__list--coupon
           each item in advantages
             li.advantages__list-item
-              a.advantages__list-item-link
+              a(href="").advantages__list-item-link
                 img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
 
 
@@ -190,7 +192,7 @@ main
         ul.advantages__list.advantages__list--long.advantages__list--personal-offer
           each item in advantages
             li.advantages__list-item
-              a.advantages__list-item-link
+              a(href="").advantages__list-item-link
                 img.advantages__list-img(src=item.img, alt=item.alt width="120" height="120")
 
 footer.page-footer
@@ -206,25 +208,25 @@ footer.page-footer
           nav.page-footer__nav
             -
               var navigation = [
-              {title: 'Купоны и сертификаты', link: ' '},
-              {title: 'Впечатления', link: ' '},
-              {title: 'Авиабилеты', link: ' '},
-              {title: 'Ж/д билеты', link: ' '},
-              {title: 'Отели', link: ' '},
-              {title: 'Каршеринг', link: ' '},
-              {title: 'Театры', link: ' '},
-              {title: 'Страхование', link: ' '},
-              {title: 'Как подключиться', link: ' '},
-              {title: 'Партнеры', link: ' '}];
+              {title: 'Купоны и сертификаты', link: ''},
+              {title: 'Впечатления', link: ''},
+              {title: 'Авиабилеты', link: ''},
+              {title: 'Ж/д билеты', link: ''},
+              {title: 'Отели', link: ''},
+              {title: 'Каршеринг', link: ''},
+              {title: 'Театры', link: ''},
+              {title: 'Страхование', link: ''},
+              {title: 'Как подключиться', link: ''},
+              {title: 'Партнеры', link: ''}];
 
             ul.main-nav.main-nav--footer
               each item in navigation
-                li.main-nav__item
+                li.main-nav__item.main-nav__item--footer
                   a.main-nav__item-link(href= item.link)= item.title
 
 
       .page-footer__socials-block
-        a(href="").contacts-n-logo__logo
+        a(href="").page-footer__logo
             img(src="img/icon_sberbank_footer_logo.svg", alt="Спасибо от Сбербанка")
 
         .page-footer__socials.socials
@@ -256,7 +258,8 @@ footer.page-footer
         small.disclaimer-block__page-disclaimer
           | <a href=""> Политика </a> АО «ЦПЛ» в отношении обработки персональных данных и <a href=""> Согласие </a> на обработку данных участника Программы «Спасибо от Сбербанка»
 
-
+script(src="js/script.js")
+script(src="js/open-search-input.js")
 script(src="../node_modules/picturefill/dist/picturefill.js")
 
 
